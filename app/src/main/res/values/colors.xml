@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="resUW">#99FFFF00</color>
+    <color name="resGW">#9900FF00</color>
+    <color name="resOW">#FF3636</color>
+    <color name="resOBS">#FF0C0C</color>
 </resources>

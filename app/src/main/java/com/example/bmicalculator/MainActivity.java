@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EditText edtFtHeight = findViewById(R.id.edt_height_ft);
         EditText edtInHeight = findViewById(R.id.edt_height_inc);
         Button btnSubmit = findViewById(R.id.btn_calculate_submit);
+        LinearLayout llMain = findViewById(R.id.llMain);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
                         double bmi = weight / (heightInMtr * heightInMtr);
                         Log.d("BMI Calculation", "Weight: " + weight + " kg, Height: " + ftHeight + "'" + inHeight + "\", BMI: " + bmi);
                         if (bmi < 18.5) {
+                            llMain.setBackgroundColor(Color.YELLOW);
                             txtResult.setText("Underweight");
                         } else if (bmi < 25) {
+                            llMain.setBackgroundColor(Color.GREEN);
                             txtResult.setText("Normal weight");
                         } else if (bmi < 30) {
+                            llMain.setBackgroundColor(Color.RED);
                             txtResult.setText("Overweight");
                         } else {
+                            llMain.setBackgroundColor(Color.RED);
                             txtResult.setText("Obese");
                         }
                     }
